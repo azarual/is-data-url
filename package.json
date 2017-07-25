@@ -1,0 +1,41 @@
+{
+  "name": "is-data-url",
+  "version": "1.0.0",
+  "description": "Check if the given value is a Data URL.",
+  "main": "dist/is-data-url.common.js",
+  "module": "dist/is-data-url.esm.js",
+  "browser": "dist/is-data-url.js",
+  "license": "MIT",
+  "homepage": "https://github.com/fengyuanchen/is-data-url",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengyuanchen/is-data-url.git"
+  },
+  "author": {
+    "name": "Chen Fengyuan",
+    "url": "http://chenfengyuan.com"
+  },
+  "keywords": [
+    "is",
+    "data",
+    "url"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "compress": "uglifyjs dist/is-data-url.js -o dist/is-data-url.min.js -c -m --comments /^!/",
+    "lint": "eslint src",
+    "postbuild": "npm run test && npm run compress",
+    "prebuild": "npm run lint",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.4.2",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "uglify-js": "^3.0.26"
+  }
+}
