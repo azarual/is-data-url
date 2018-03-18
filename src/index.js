@@ -1,5 +1,5 @@
 // Spec: https://tools.ietf.org/html/rfc2397
-const REGEXP_DATA_URL = /^data:(.+?\/.+?)?(;.+?=.+?)*(;base64)?,.*$/;
+const REGEXP_DATA_URL = /^data:(?:.+?\/.+?)?(?:;.+?=.+?)*(?:;base64)?,.*$/;
 
 /**
  * Check if the given value is a Data URL.
