@@ -4,7 +4,7 @@
   "description": "Check if the given value is a Data URL.",
   "main": "dist/is-data-url.common.js",
   "module": "dist/is-data-url.esm.js",
-  "browser": "dist/is-data-url.js",
+  "unpkg": "dist/is-data-url.js",
   "license": "MIT",
   "homepage": "https://github.com/fengyuanchen/is-data-url",
   "repository": {
@@ -28,8 +28,7 @@
     "build": "rollup -c",
     "compress": "uglifyjs dist/is-data-url.js -o dist/is-data-url.min.js -c -m --comments /^!/",
     "lint": "eslint src",
-    "postbuild": "npm run test && npm run compress",
-    "prebuild": "npm run lint",
+    "release": "npm run lint && npm run build && npm run compress && npm run test",
     "test": "mocha"
   },
   "devDependencies": {
