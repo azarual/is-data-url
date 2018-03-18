@@ -1,5 +1,7 @@
 # is-data-url
 
+[![Build Status](https://travis-ci.org/fengyuanchen/is-data-url.svg)](https://travis-ci.org/fengyuanchen/is-data-url) [![Downloads](https://img.shields.io/npm/dm/is-data-url.svg)](https://www.npmjs.com/package/is-data-url) [![Version](https://img.shields.io/npm/v/is-data-url.svg)](https://www.npmjs.com/package/is-data-url)
+
 > Check if the given value is a [Data URL](https://tools.ietf.org/html/rfc2397).
 
 ## Main
