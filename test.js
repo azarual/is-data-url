@@ -1,10 +1,12 @@
-var assert = require('assert');
-var isDataURL = require('./');
+const assert = require('assert');
+const isDataURL = require('./');
 
-it('should return true if it is a Data URL', function () {
-  assert(isDataURL('data:text/plain;base64,SGVsbG8sIFdvcmxkIQo='));
-});
+describe('is-data-url', () => {
+  it('should return true if it is a Data URL', () => {
+    assert(isDataURL('data:text/plain;base64,SGVsbG8sIFdvcmxkIQo='));
+  });
 
-it('should return false if it is not a Data URL', function () {
-  assert(!isDataURL('data:foo'));
+  it('should return false if it is not a Data URL', () => {
+    assert(!isDataURL('data:foo'));
+  });
 });
