@@ -1,38 +1,45 @@
 const babel = require('rollup-plugin-babel');
+const createBanner = require('create-banner');
 const pkg = require('./package');
 
-const now = new Date();
+const name = 'isDataURL';
 
 export default {
-  entry: 'src/index.js',
-  targets: [
+  input: 'src/index.js',
+  output: [
     {
-      dest: 'dist/is-data-url.js',
+      name,
+      banner: createBanner({
+        data: {
+          name,
+          year: '2017-present',
+        },
+      }),
+      file: `dist/${pkg.name}.js`,
+      format: 'umd',
     },
     {
-      dest: 'dist/is-data-url.common.js',
+      name,
+      banner: createBanner({
+        data: {
+          name,
+          year: '2017-present',
+        },
+        template: 'inline',
+      }),
+      file: `dist/${pkg.name}.min.js`,
+      format: 'umd',
+    },
+    {
+      file: `dist/${pkg.name}.common.js`,
       format: 'cjs',
     },
     {
-      dest: 'dist/is-data-url.esm.js',
-      format: 'es',
+      file: `dist/${pkg.name}.esm.js`,
+      format: 'esm',
     },
   ],
-  format: 'umd',
-  moduleName: 'isDataURL',
   plugins: [
-    babel({
-      exclude: '/node_modules/**',
-    }),
+    babel(),
   ],
-  banner: `/*!
- * isDataURL v${pkg.version}
- * https://github.com/fengyuanchen/${pkg.name}
- *
- * Copyright (c) ${now.getFullYear()} ${pkg.author.name}
- * Released under the ${pkg.license} license
- *
- * Date: ${now.toISOString()}
- */
-`,
 };
