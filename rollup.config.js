@@ -4,7 +4,7 @@ const pkg = require('./package');
 
 const name = 'isDataURL';
 
-export default {
+module.exports = {
   input: 'src/index.js',
   output: [
     {
